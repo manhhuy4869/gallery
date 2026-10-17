@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function countVowels(str) {
+        let vowels = 'aeiouAEIOU'
+        let count = 0;
+        for (let index = 0; index < str.length; index++) {
+            vowels.indexOf(str[index]) !== -1 && count++;
+            
+        }
+        return count;
+    }
+    const countVow = str => str.match(/[aeiou]/gi)?.length || 0;
+    
+    console.log(
+        countVow('dfjhgfdggwgfeÀDGUivca'),
+        countVowels('dfjhgfdggwgfeÀDGUivca')
+    );
+    
+    const str = "hello world";
+const result = str.match("world");
+console.log(result); // ['world', index: 6, input: 'hello world', groups: undefined]
+
+</script>
+
+</html>
