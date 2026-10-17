@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+#overlay,
+.img-overlay {
+    background: rgba(0, 0, 0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0
+}
+
+#overlay {
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    user-select: none
+}
+
+#overlay img,
+.img-overlay,
+.img-wrapper img {
+    object-fit: contain;
+    height: 100%
+}
+
+#overlay img {
+    width: 100%;
+    padding: 0 10px;
+    margin: 0
+}
+
+.img-wrapper {
+    position: relative;
+    height: 200px;
+    margin: 10px 0
+}
+
+.img-wrapper img {
+    width: 100%
+}
+
+.img-overlay {
+    position: absolute;
+    opacity: 0;
+    transition: opacity .6s;
+    font-size: 2em;
+}
+
+.img-wrapper:hover .img-overlay {
+    opacity: 1
+}
+
+.exit1 {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 2em;
+    cursor: pointer
+}
+
+.dialog-container {
+    position: fixed;
+    left: 50%;
+    top: -30%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #ddd;
+    box-shadow: 1px 1px 5px 1px #ccc;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity .3s linear;
+    z-index: 10000
+}
+
+.select-menu .option,
+.select-menu .options,
+.select-menu .select-btn {
+    background: #fff;
+    border-radius: 8px
+}
+
+.dialog-header {
+    padding: 10px;
+    font-weight: 700;
+    background: #575757;
+    color: #f6f7f8
+}
+
+.dialog-body {
+    padding: 10px;
+    line-height: 30px
+}
+
+.select-menu {
+    max-width: 330px;
+    margin: 0 auto
+}
+
+.select-menu .select-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    cursor: pointer
+}
+
+.select-menu .options {
+    display: none;
+    position: absolute;
+    width: 330px;
+    max-height: 295px;
+    padding: 10px;
+    margin-top: 10px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    animation: .35s both fadeInDown
+}
+
+.select-menu .option {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 0 16px;
+    cursor: pointer;
+    transition: background .3s;
+    margin-left: 12px
+}
+
+.select-menu .option:hover {
+    background: #f2f2f2
+}
+
+.select-menu .option .option-text {
+    font-size: 15px;
+    color: #333
+}
+
+.select-menu.active .options {
+    display: block;
+    opacity: 0;
+    /* z-index: 0; */
+    animation: .4s both fadeInUp
+}
+
+.img-select-container {
+    width: 70px;
+    height: 70px;
+    margin: 20px 20px 20px 0
+}
+
+.img-select-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0, 30px, 0)
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
+
+    to {
+        transform: translate3d(0, 20px, 0);
+        opacity: 0
+    }
+}

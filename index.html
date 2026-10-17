@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Image Gallery</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="./src/style.css">
+
+</head>
+
+<body style="background: black;">
+  <section id="gallery">
+    <div class="container-fluid">
+      <div id="image-gallery">
+        <div class="row"></div>
+      </div>
+    </div>
+    <div id="overlay" style="display: none;">
+      <img>
+      <div class="exit1"><i class="fa fa-times text-white exit"></i></div>
+    </div>
+  </section>
+  <div id="dialog-container" class="dialog-container">
+    <div class="exit1"><i class="fa fa-times text-white exit"></i></div>
+    <div class="dialog-header">Change folder</div>
+    <div id="dialog-body" class="dialog-body">
+      <div class="select-menu">
+        <div class="select-btn">
+          <span class="sBtn-text">Select your option</span>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+        <ul class="options"></ul>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="./src/data.js"></script>
+  <script src="./src/script2.js"></script>
+
+</body>
+
+</html>
